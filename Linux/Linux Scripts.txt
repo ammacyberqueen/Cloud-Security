@@ -1,6 +1,29 @@
 Linux Scripts
-Navigate to 
-nano hosts
+
+ssh azureadmin@20.190.124.83 - to remote in to Jump Host
+ssh azureadmin@ 20.92.95.248 - to remote to ELK Server from Jump Host
+
+sudo apt update       -- check to see what programs are being offered
+sudo apt install docker.io -- installs docker
+docker run -ti cyberxsecurity/ansible:latest bash      - starts the container up for the first time
+
+To Launch Container dfa7ff4fcb41 kind_edison
+
+
+
+sudo docker ps -a
+
+sudo docker 
+
+sudo docker start dfa
+
+sudo docker attach dfa
+
+Navigate to /etc/ansible
+
+use nano to create/edit files 
+
+example nano hosts
 Add entries
 
 	[webservers]
@@ -12,6 +35,17 @@ Add entries
 	[elk]
 	10.2.0.4 ansible_python_interpreter=/usr/
 
+Control + W to go to particular line
+
+Control X to Save file
+
+Use nano to alter the config files and Playbooks 
+
+To run playbooks
+
+ansible-playbook filebeat-playbook.yml
+
+ansible-playbook metribeat-playbook.yml
 
 
-nano ansible.cfg
+
