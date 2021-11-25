@@ -59,7 +59,7 @@ Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown
 
 The machines on the internal network are not exposed to the public Internet. 
 
-- Only the Jump Host machine and the Web Servers (1,2,3) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: My home IP address (******)
+- Only the `Jump Host machine and the Web Servers (1,2,3)` can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: My home IP address (******)
 
 
 Machines within the network can only be accessed by Jump Box.
@@ -88,6 +88,8 @@ The playbook implements the following tasks:
 - Enabled Container on boot
 - Updated hosts file to include the Web VM Ips
 - Update ansible.cfg file with the username
+- Update filebeat configration and install
+- Update metricbeat configuration and install 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
