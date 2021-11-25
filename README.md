@@ -22,7 +22,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - [hosts](Ansible/hosts.txt)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in Use
@@ -34,10 +34,10 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting unauthorised access to the network.
+Load balancing ensures that the application will be highly `available`, in addition to restricting unauthorised `access` to the network.
 - What aspect of security do load balancers protect? What is the advantage of a jump box?
-  - Load Balancers protect the availabilty of the servers, and will switch loads in between the servers so that no individual server is unable to respond to requests, and the queries are distributed among the servers in the Load balancer backend pool.
-- Jump box offers security and isolates points of entry to the network. Only SSH can be used on the allowed orignating IP addresses.
+  - Load Balancers protect the `availabilty of the servers`, and will switch loads in between the servers so that no individual server is in distress and unable to respond to requests, and the queries are distributed among the servers in the Load balancer backend pool.
+- Jump box offers `security` and isolates points of entry to the network. Only SSH can be used on the allowed orignating IP addresses.
   - Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the configuration_ and system logs.
 - What does Filebeat watch for?
   - Filebeat monitors for SSH logins, Linux Logins and Sudo Commands.
@@ -78,7 +78,7 @@ Machines within the network can only be accessed by Jump Box.
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
 - Reduces repetitive work on the servers to be managed.
-- Increases efficinenty by reducitng errors
+- Increases efficinenty by reducing errors
 - Source control is effective
 
 The playbook implements the following tasks:
@@ -126,6 +126,6 @@ Answer the following questions to fill in the blanks:
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on?
   - In the ansible script, we must specify the `hosts` option in our script to determine where that script should install specific programs to. For example, `[webservers]` vs `[elk]` and only IP entries of the Web servers entries to the host file  will be updated.
 - Which URL do you navigate to in order to check that the ELK server is running?
-  -http://20.92.95.248:5601/app/kibana:5601
+  - http://20.92.95.248:5601/app/kibana:5601
 
 
