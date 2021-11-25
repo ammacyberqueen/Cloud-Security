@@ -39,13 +39,13 @@ Load balancing ensures that the application will be highly available, in additio
   - Load Balancers protect the availabilty of the servers, and will switch loads in between the servers so that no individual server is unable to respond to requests, and the queries are distributed among the servers in the Load balancer backend pool.
 - Jump box offers security and isolates points of entry to the network. Only SSH can be used on the allowed orignating IP addresses.
   - Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the configuration_ and system logs.
-- What does Filebeat watch for?_
+- What does Filebeat watch for?
   - Filebeat monitors for SSH logins, Linux Logins and Sudo Commands.
-- What does Metricbeat record?_
+- What does Metricbeat record?
   - Metric Beats records CPU, Memory, and Network usage. (In real time)
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
@@ -63,7 +63,7 @@ The machines on the internal network are not exposed to the public Internet.
 
 
 Machines within the network can only be accessed by Jump Box.
--Which machine did you allow to access your ELK VM? What was its IP address?_
+-Which machine did you allow to access your ELK VM? What was its IP address?
 - Jump Box IP was permitted to access the ELK Server via SSH and ELK IP was 10.2.0.4
 - Summary of the access policies in place can be found in the table below.
 
@@ -91,7 +91,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![Docker-output](Diagrams/docker-output.png)
+![Docker-output](Diagrams/docker-output.PNG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -114,7 +114,7 @@ SSH into the control node and follow the steps below:
 - Update the host file to include the IP addresses of the Servers to be updated.
 - Run the playbook, and navigate to  Web VMs or ELK Server to check that the installation worked as expected. Tried to access DVWA web.
 
-Answer the following questions to fill in the blanks:_
+Answer the following questions to fill in the blanks:
 - Which file is the playbook? Where do you copy it?
   - [elk.yml](Ansible/elk.yml)
   - [pentest.yml](Ansible/pentest.yml)
