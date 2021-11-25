@@ -1,0 +1,47 @@
+---
+-
+  become: true
+  hosts: elk
+  name: "Configure Elk VM with Docker"
+  remote_user: azureadmin
+  tasks:
+    -
+      apt:
+        name: docker.io
+        state: present
+        update_cache: true
+      name: "Install docker.io"
+    -
+      apt:
+        force_apt_get: true
+        name: python3-pip
+        state: present
+      name: "Install pip3"
+    -
+      name: "Install Docker python module"
+      pip:
+        name: docker
+        state: present
+    -
+      name: "Use more memory"
+      sysctl:
+        name: vm.max_map_count
+        reload: true
+        state: present
+        value: "262144"
+    -
+      docker_container:
+        image: "sebp/elk:761"
+        name: elk
+        published_ports:
+          - "5601:5601"
+          - "9200:9200"
+          - "5044:5044"
+        restart_policy: always
+        state: started
+      name: "download and launch a docker elk container"
+    -
+      name: "Enable service docker on boot"
+      systemd:
+        enabled: true
+        name: docker

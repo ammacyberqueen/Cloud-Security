@@ -22,13 +22,13 @@ This document contains the following details:
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly available, in addition to restricting unauthorised access to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-- Load Balancers protect the availabilty of the servers, and will switch loads
+- _What aspect of security do load balancers protect? What is the advantage of a jump box?_
+- Load Balancers protect the availabilty of the servers, and will switch loads in between the servers so that no individual server is unable to respond to requests, and the queries are distributed among the servers in the Load balancer backend pool.
 - Jump box offers security and isolates points of entry to the network.Only SSH can be used on the allowed orignationg IP addresses.
 - Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the configuration_ and system logs.
-- _TODO: What does Filebeat watch for?_
+- What does Filebeat watch for?_
 - Filebeat monitors for SSH logins, Linux Logins and Sudo Commands.
-- _TODO: What does Metricbeat record?_
+- What does Metricbeat record?_
 - Metric Beats records CPU, Memory, and Network usage. (In real time)
 
 The configuration details of each machine may be found below.
@@ -37,27 +37,26 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
 | Jump Box | Gateway  | 10.1.0.4   | Linux            |
-| Web1  |      Web Server    |            |                  |
-|Web 2   |          |            |                  |
-| Web 3   |          |            |                  |
-| Elk Server   |   Monitoring Solution (Log & Metrics)       |            |                  |
+| Web1  |      Web Server    |         10.1.0.7   |     Linux             |
+|Web 2   |    Web Server      |        10.1.0.8         |   Linux          |
+| Web 3   |   Web Server       |        10.1.0.9         |     Linux          |
+| Elk Server   |   Monitoring Solution (Log & Metrics)       | 20.92.95.248           |   Linux               |
 
 ### Access Policies
 
 The machines on the internal network are not exposed to the public Internet. 
 
-- Only the Jump Host machine and the Web Servers (1.2.3) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: My home IP address - 101.181.66.75
-_
+- Only the Jump Host machine and the Web Servers (1,2,3) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses: My home IP address - 101.181.66.75
+
 
 Machines within the network can only be accessed by Jump Box.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-- Jump Box IP address was 10.1.0.4
-
-A summary of the access policies in place can be found in the table below.
+-Which machine did you allow to access your ELK VM? What was its IP address?_
+- Jump Box IP was permitted to access the ELK Server via SSH and ELK IP was 10.2.0.4
+- Summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes             | My home  |
+| Jump Box | Yes             | My home 101.181.66.75  |
 |   Web 1       |      Yes               |         Any             |
 |      Web 2    |       Yes              |           Any           |
 |      Web 3   |        Yes             |         Any             |
@@ -106,6 +105,6 @@ _TODO: Answer the following questions to fill in the blanks:_
 - ansible 
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
 - _Which URL do you navigate to in order to check that the ELK server is running?
-http://20.92.95.248:5601/app/kibana: 5601
+http://20.92.95.248:5601/app/kibana:5601
 - only IP entries of the Web servers entries to the host file  will be updated.
 
