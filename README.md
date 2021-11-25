@@ -1,4 +1,4 @@
-## Automated ELK Stack Deployment - V K
+## Automated ELK Stack Deployment - VK
 
 The files in this repository were used to configure the network depicted below.
 
@@ -129,8 +129,6 @@ Answer the following questions to fill in the blanks:
   - In the ansible script, we must specify the `hosts` option in our script to determine where that script should install specific programs to. For example, `[webservers]` vs `[elk]` and only IP entries of the Web servers entries to the host file  will be updated.
 - Which URL do you navigate to in order to check that the ELK server is running?
   - http://20.191.230.73:5601/app/kibana#/home
-  
-  - http://20.92.95.248:5601/app/kibana:5601
-
+    
 ![FileBeat Screenshot](Diagrams/Filebeat.png)
 ![MetricBeat Screenshot](Diagrams/Metric-Beat.png)
