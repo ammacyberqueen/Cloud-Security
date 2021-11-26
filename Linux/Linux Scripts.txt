@@ -41,7 +41,7 @@ Control X to Save file
 
 Use nano to alter the config files and Playbooks 
 
-To run playbooks
+To run playbooks navigate to /etc/ansible and then run
 
 ansible-playbook filebeat-playbook.yml
 
